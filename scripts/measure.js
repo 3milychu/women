@@ -25,12 +25,12 @@ function measure() {
         headerWidth = window.innerWidth;
         headerLeft = 0;
         headerTop = 0;
-        headerHeight = 0;
+        headerHeight =0;
 
         //List
         listWidth = headerWidth;
 
-        listHeight = window.innerHeight;
+        listHeight = window.innerHeight - headerHeight;
         listLeft = headerLeft;
         listTop = headerTop + headerHeight;
     }
@@ -48,7 +48,7 @@ function measure() {
         //List
         listWidth = headerWidth;
 
-        listHeight = window.innerHeight;
+        listHeight = window.innerHeight - headerHeight;
         listLeft = headerLeft;
         listTop = headerTop + headerHeight;
     }
@@ -58,13 +58,13 @@ function measure() {
     scrollLeft = (headerWidth-scrollWidth)/2;
 
     // Scroller UI element
-    scrollerHeight = (headerWidth * 0.25) * 0.036585366;
+    scrollerHeight = headerHeight * 0.036585366;
     if (scrollerWidth == null) scrollerWidth = scrollWidth;
 
     // Fonts
-    titleFontHeight = (headerWidth * 0.25) * 0.22;
-    subTitleFontHeight = (headerWidth * 0.25) * .16;
-    scrollFontHeight = (headerWidth * 0.25) * 0.13;
+    titleFontHeight = headerHeight * 0.22;
+    subTitleFontHeight = headerHeight * .16;
+    scrollFontHeight = headerHeight * 0.13;
 
     // Charts
     chartWidth = listWidth;

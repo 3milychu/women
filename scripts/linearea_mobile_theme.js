@@ -127,20 +127,21 @@ vizuly.theme.linearea_mobile = function (viz) {
         selection.selectAll(".vz-left-axis text")
             .attr("x",w *.01)
             .attr("y",-Math.round(w *.035)/2)
-            .style("font-size",Math.round(w *.035) + "px")
+            .style("font-size",Math.round(w *.03) + "px")
+            .style("color","808080")
             .style("text-anchor","start");
 
         selection.selectAll(".vz-pointer-label text")
-            .style("font-size",Math.round(w/3 *.035) + "px")
+            .style("font-size",Math.round(w/3 *.07) + "px")
             .style("text-anchor","middle");
 
 
         selection.selectAll(".tip-point-outer")
-            .attr("r",viz.width() * .006)
+            .attr("r",viz.width() * .011)
             .style("fill","ED7D31");
 
         selection.selectAll(".tip-point-center")
-            .attr("r",viz.width() * .004)
+            .attr("r",viz.width() * .008)
             .style("fill","white")
 
         onIndexChange();

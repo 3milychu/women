@@ -90,8 +90,8 @@ var chartColors=["#F48FB1","#FFAF49","#7986CB","#2DA4A9","#E57373"];
 var labelColors=["#ED7D31","#ED7D31","#ED7D31","#ED7D31","#ED7D31"];
 
 // Data Fields
-var dataFields = ["Labor","w_mgr","m_ed","m_mgr","f_ed"];
-var menuItems = [{label: "w_mgr", value: "w_mgr"},{label: "m_ed", value: "m_ed"},{label: "m_mgr", value: "m_mgr"},{label: "f_ed", value: "f_ed"},{label: "Labor", value: "Labor"}];
+var dataFields = ["w_mgr","m_mgr","f_ed","m_ed","Labor"];
+var menuItems = [{label: "Female Managers", value: "w_mgr"},{label: "Male Managers", value: "m_mgr"},{label: "Female Advanced Degrees", value: "f_ed"},{label: "Male Advanced Degrees", value: "m_ed"},{label: "Labor Totals", value: "Labor"}];
 var skins = ["Default"];
 
 // Formatters used to make labels pretty

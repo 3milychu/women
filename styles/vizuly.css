@@ -136,7 +136,7 @@ svg {
 }
 
 i.mdi-navigation-menu:before {
-    font-size:40px;
+    font-size:1em;
     content: "\e662";
 }
 i.mdi-navigation-menu:hover {

@@ -79,14 +79,14 @@ div.chart-menu {
 }
 
 .vz-left-axis {
-    stroke: #FFF;
+    stroke: #ED7D31;
     stroke-width: 0.5;
     stroke-opacity: .5;
 }
 
 .vz-left-axis text {
     stroke:none;
-    fill:#FFF;
+    fill:#808080;
     font-weight: 300;
 }
 
@@ -132,8 +132,8 @@ div.chart-menu {
 }
 
 .vz-pointer-label rect{
-    fill:#000;
-    fill-opacity: .7;
+    fill:#ED7D31;
+    fill-opacity: .9;
 }
 
 .mobile-list-item{

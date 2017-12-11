@@ -76,3 +76,21 @@ p.subtitle{
 #header {
 	margin-top:0%;
 }
+
+@media only screen and (max-width: 1200px)  {
+	h1{
+		font-size:4em;
+	}
+	.title p{
+		font-size:1.2em;
+	}
+	.imgContainer{
+		width:45%;
+	}
+	.media{
+		padding: 2% 0% 2% 5%;
+	}
+	.title {
+		padding-bottom:10%;
+	}
+	}
