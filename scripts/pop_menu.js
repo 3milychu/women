@@ -75,11 +75,11 @@ vizuly.ui.pop_menu = function (parent) {
         viz.validate();
 
         // Get our size based on height, width, and margin
-        size = vizuly.core.util.size({top:0,left:0,bottom:0,right:0}, scope.width, scope.height);
+        size = vizuly.core.util.size({top:0,left:0,bottom:0,right:0}, scope.width, scope.height/2);
 
 
         borderRadius = Math.min(size.width,size.height)*.05;
-        itemHeight = (size.height/2-borderRadius)/scope.data.length;
+        itemHeight = (size.height-borderRadius)/scope.data.length;
         itemWidth = size.width;
         fontSize = itemHeight * 0.55;
 

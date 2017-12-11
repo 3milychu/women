@@ -90,8 +90,8 @@ var chartColors=["#F48FB1","#FFAF49","#7986CB","#2DA4A9","#E57373"];
 var labelColors=["#ED7D31","#ED7D31","#ED7D31","#ED7D31","#ED7D31"];
 
 // Data Fields
-var dataFields = ["w_mgr","m_mgr","f_ed","m_ed","Labor"];
-var menuItems = [{label: "Female Managers", value: "w_mgr"},{label: "Male Managers", value: "m_mgr"},{label: "Female Advanced Degrees", value: "f_ed"},{label: "Male Advanced Degrees", value: "m_ed"},{label: "Labor Totals", value: "Labor"}];
+var dataFields = ["w_mgr","m_mgr","Labor"];
+var menuItems = [{label: "Female Managers", value: "w_mgr"},{label: "Male Managers", value: "m_mgr"},{label: "Labor Totals", value: "Labor"}];
 var skins = ["Default"];
 
 // Formatters used to make labels pretty
@@ -327,7 +327,7 @@ function updateCharts() {
             .style("color",labelColors[i])
             .style("opacity",1)
             .style("cursor","pointer")
-            .html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + String(dataFields[i]).toUpperCase() + "</span>");
+            .html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + String(dataFields[i]) + "</span>");
 
         menus[i].width(menuWidth)
             .height(menuHeight)
@@ -339,7 +339,7 @@ function updateCharts() {
 // Fired when user has selected an item from a chart pop menu.
 function chartMenu_onClick(d,i) {
     dataFields[i] = d.value;
-    chartLabels[i].html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + d.label.toUpperCase() + "</span>");
+    chartLabels[i].html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + d.label + "</span>");
     var zoom = charts[i].zoom();
     charts[i].update();
     if (expandedIndex == i) {
