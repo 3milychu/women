@@ -25,12 +25,12 @@ function measure() {
         headerWidth = window.innerWidth;
         headerLeft = 0;
         headerTop = 0;
-        headerHeight = headerWidth * 0.238461538;
+        headerHeight = 0;
 
         //List
         listWidth = headerWidth;
 
-        listHeight = window.innerHeight - headerHeight;
+        listHeight = window.innerHeight;
         listLeft = headerLeft;
         listTop = headerTop + headerHeight;
     }
