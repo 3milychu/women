@@ -123,11 +123,11 @@
         }
 
         // Load our stock data
-        d3.csv("assets/mobile_stocks.csv", function (csv) {
+        d3.csv("http://3milychu.github.io/women/assets/mobile_stocks.csv", function (csv) {
 
             // Filter data to get only years above 2012.   You can adjust this to see how the chart
             // looks with more or less data.
-            var data = csv.filter(function (d) { return d.diff > -20 });
+            var data = csv.filter(function (d) { return d3.time.format("%m/%d/%Y").parse(d.date).getFullYear() > 09 });
 
             // Nest stock values by symbol.
             symbols = d3.nest()
