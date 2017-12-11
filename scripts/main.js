@@ -87,7 +87,7 @@ var symbols=[];      // The unqiue stock symbols from our data
 
 // Colors used for chart backgrounds
 var chartColors=["#F48FB1","#FFAF49","#7986CB","#2DA4A9","#E57373"];
-var labelColors=["#C01B3E","#FF653A","#2D4FAC","#3F5874","#C62828"];
+var labelColors=["#ED7D31","#ED7D31","#ED7D31","#ED7D31","#ED7D31"];
 
 // Data Fields
 var dataFields = ["Labor","w_mgr","m_ed","m_mgr","f_ed"];
