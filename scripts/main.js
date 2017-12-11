@@ -90,14 +90,14 @@ var chartColors=["#F48FB1","#FFAF49","#7986CB","#2DA4A9","#E57373"];
 var labelColors=["#ED7D31","#ED7D31","#ED7D31","#ED7D31","#ED7D31"];
 
 // Data Fields
-var dataFields = ["w_mgr","m_mgr","Labor"];
-var menuItems = [{label: "Female Managers", value: "w_mgr"},{label: "Male Managers", value: "m_mgr"},{label: "Labor Totals", value: "Labor"}];
+var dataFields = ["w_mgr","m_mgr","diff"];
+var menuItems = [{label: "Female Managers", value: "w_mgr"},{label: "Male Managers", value: "m_mgr"},{label: "Diff", value: "diff"}];
 var skins = ["Default"];
 
 // Formatters used to make labels pretty
 var labelFormat = d3.time.format("%b 20%y"), titleDateFormat = d3.time.format("%b %_d 20%y");
 var currFormat = function (d) { return d3.format("*100%")(d);};
-var volumeFormat = function (d) { return d3.format(',.0f')(d);};
+var volumeFormat = function (d) { return d3.format("*100%")(d);};
 
 // Measurements for various display elements.
 var chartHeight, chartWidth;
@@ -172,15 +172,15 @@ function initialize() {
             .margin({top: chartHeight * (1 - chartHeightRatio), left:0, bottom:0, right:0})
             .height(chartHeight)
             .x(function (d) { return d.date;})
-            .y(function (d) { return Number(d[dataFields[i]]); })
+            .y(function (d) { return Number(d[dataFields[0]]); })
             .dataLabel(function (d) {
-                return (dataFields[i] == "Labor") ? volumeFormat(this.y(d)) : currFormat(this.y(d));
+                return (dataFields[i] == "diff") ? volumeFormat(this.y(d)) : currFormat(this.y(d));
             })
             .on("validate",function () {
                 this.component.yScale(d3.scale.pow());
             })
             .on("measure",function () {
-                if (dataFields[i] == "Labor") {
+                if (dataFields[i] == "diff") {
                     this.component.yScale().exponent(.5);
                     this.component.yAxis().tickFormat(volumeFormat);
                 }
@@ -243,7 +243,7 @@ function update() {
 
     updateCharts();
 
-    // updateLabels();
+    updateLabels();
 
 }
 
@@ -327,7 +327,7 @@ function updateCharts() {
             .style("color",labelColors[i])
             .style("opacity",1)
             .style("cursor","pointer")
-            .html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + String(dataFields[i]) + "</span>");
+            .html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + String(dataFields[0]) + "</span>");
 
         menus[i].width(menuWidth)
             .height(menuHeight)

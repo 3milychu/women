@@ -19,10 +19,12 @@
      
       <div class="media">     
         <div class="imgContainer">
+            <span class="overlay">Y-axis</span>
           <img src="assets/mgr_img.png">
           <p class="subtitle">Women’s proportion of managerial positions</p>
         </div>
          <div class="imgContainer">
+         <span class="overlay">X-axis</span>
           <img src="assets/ed_diff_img.png">
           <p class="subtitle">Female - male % advanced degree attainment</p>
         </div>
@@ -122,7 +124,7 @@
             touchClickEvent = "click";
         }
 
-        // Load our stock data
+        // Load our data
         d3.csv("https://3milychu.github.io/women/assets/gender_stats.csv", function (csv) {
 
             // Filter data to get only years above 2012.   You can adjust this to see how the chart

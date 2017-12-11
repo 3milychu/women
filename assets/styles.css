@@ -40,7 +40,7 @@ h1 {
 .media {
 	position:relative;
 	text-align:center;
-	padding: 2% 10% 2% 20%;
+	padding: 5% 10% 2% 20%;
 	background-color:#f2f2f2;
 }
 
@@ -55,8 +55,19 @@ img {
 	width:100%;
 }
 
+.overlay {
+	background-color:black;
+	color:white;
+	top:0;
+	left:0;
+	width:10%;
+	height:auto;
+	padding:2%;
+	border-radius:2px;
+}
+
 p.subtitle{
-	font-size:0.6em;
+	font-size:1em;
 	font-weight:900;
 	text-align:center;
 }
@@ -88,7 +99,7 @@ p.subtitle{
 		width:45%;
 	}
 	.media{
-		padding: 2% 0% 2% 5%;
+		padding: 5% 0% 2% 5%;
 	}
 	.title {
 		padding-bottom:10%;
