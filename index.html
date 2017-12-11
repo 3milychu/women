@@ -1,0 +1,204 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,500,100,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="styles/vizuly.css">
+    <link rel="stylesheet" href="styles/vizuly_mobile_app.css">
+</head>
+<body>
+
+
+  <!-- Title -->
+  <div class="title">
+
+    <h1>The Value of Women</h1>
+    <p>How does women’s value rise in the workplace? Explore how proportion of women in managerial positions correlate against expectations with proportion of women's advanced degrees attainment.</p>
+     
+      <div class="media">     
+        <div class="imgContainer">
+          <img src="assets/mgr_img.png">
+          <p class="subtitle">Women’s proportion of managerial positions</p>
+        </div>
+         <div class="imgContainer">
+          <img src="assets/ed_diff_img.png">
+          <p class="subtitle">Female - male % advanced degree attainment</p>
+        </div>
+      </div>
+      <br class="clear"/>
+  </div>
+
+<div class="content" style="position:relative;">
+
+<!-- devicePhone -->
+    <div id="devicePhone" style="position:absolute; display: block; opacity: 1; overflow: hidden; pointer-events: auto; z-index: 0;">
+    </div>
+
+    <div id="header" style="position:absolute; z-index:2; opacity:1; background-color: #3B4E57">
+
+         <!-- titleBar -->
+        <div id="titleBar" class="noselect" style="position:relative; height:40%;">
+            <a href="http://vizuly.io" target="_blank">
+                <div id="menu"
+                 style="position: absolute; left:0%; width:12%; height:100%; pointer-events: auto; cursor:pointer">
+                </div>
+            </a>
+
+            <!-- title -->
+            <div id="title"
+                 style="position:absolute; left:15%; text-align: center; bottom:0; width:70%; height:65%; font-weight:300; opacity:0.6;">
+            </div>
+
+            <!-- infoButton -->
+            <div id="infoButton"
+                 style="position:absolute; display:block; cursor:pointer; pointer-events:auto; right:3%; width:6.5%; height:100%; margin-top:3%; background-size:contain;">
+            </div>
+        </div>
+        <!-- titleBar [end] -->
+
+        <!-- date -->
+        <div id="date" class="noselect" style="position:absolute; top:42%; width:100%; text-align:center; font-weight:200; font-size:14px;"></div>
+
+        <!-- scrollContainer -->
+        <div id="scrollContainer" style="position:relative; left:0%; width:100%; height:10%; top:38%;">
+
+            <!-- scrolldiv -->
+            <div id="scrollDiv" style="position:absolute; top:40%; z-index:3; height:100%; opacity:0.8;"></div>
+
+        <!-- scrollContainer [end] -->
+
+    </div>
+    <!-- header [end] -->
+    
+    <!-- chartsDiv -->
+    <div id="chartsDiv" style="position:absolute; width:100%; opacity: 1; overflow:hidden;"></div>
+
+    <div style="position:absolute; z-index:4; display:none">
+        <input id="pointer" style="position:absolute; display:none" type="range" min="0" max="100" step=".1">
+    </div>
+
+
+</div>
+
+  <!-- load our dependencies and sketch file -->
+  <script src="libraries/p5.js"></script>
+  <script src="libraries/lodash.js"></script>
+  <script src="libraries/brewer.js"></script>
+<!--   <script src="sketch.js"></script> -->
+
+  <!-- p5.js will create a canvas element here at runtime -->
+</body>
+
+<script src="libraries/d3.min_04_30_15.js"></script>
+<script src="libraries/vizuly_core.min.js"></script>
+
+<!-- debug source scripts: start -->
+<script src="scripts/scroller.js"></script>
+<script src="scripts/pop_menu.js"></script>
+<script src="scripts/linearea_mobile_theme.js"></script>
+<script src="scripts/linearea_mobile.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/measure.js"></script>
+<!-- debug source scripts: end -->
+
+
+<!-- script -->
+
+<script>
+
+
+    window.onload = function (e) {
+
+        // Check to see whether we are on a mobile display
+        mobile=isMobile();
+
+        // Set our click event for desktop vs mobile
+        if (mobile==true) {
+            touchClickEvent = "touchend"
+        }
+        else {
+            touchClickEvent = "click";
+        }
+
+        // Load our stock data
+        d3.csv("assets/mobile_stocks.csv", function (csv) {
+
+            // Filter data to get only years above 2012.   You can adjust this to see how the chart
+            // looks with more or less data.
+            var data = csv.filter(function (d) { return d.diff > -20 });
+
+            // Nest stock values by symbol.
+            symbols = d3.nest()
+                    .key(function (d) {
+                        return d.symbol;
+                    })
+                    .entries(stocks = data);
+
+            // Parse dates and numbers. We assume values are sorted by date.
+            // Also compute the maximum price per symbol, needed for the y-domain.
+            symbols.forEach(function (s) {
+                s.values.forEach(function (d) {
+                    d.date = d3.time.format("%m/%d/%Y").parse(d.date);
+                });
+
+                menuItems.forEach(function(field) {
+                    s["max" + field] = d3.max(s.values, function (d) {
+                        return Math.max(d[field], d[field]);
+                    });
+                    s["min" + field] = d3.min(s.values, function (d) {
+                        return Math.min(d[field], d[field]);
+                    });
+                    s["sum" + field] = d3.sum(s.values, function (d) {
+                        return d[field];
+                    });
+                });
+
+            });
+
+            initialize();
+            update();
+
+        });
+    };
+
+    // We use a slight delay to prevent the resize operation from constantly
+    // re-rendering the display.
+    window.onresize = function (e) {
+
+        // If this is a mobile device we ignore resize operations.
+        if (mobile==true) return;
+
+        if (resizeTimeout != null) {
+            clearTimeout(resizeTimeout);
+            //Start clock over again
+            resizeTimeout = setTimeout(resize,300);
+        }
+        else {
+            resizeTimeout = setTimeout(resize,300);
+        }
+    };
+
+    // Used to re-render display after a delay on a resize;
+    var resizeTimeout;
+    function resize() {
+        location.reload();
+    }
+
+    // Hides the intro gesture information
+    function hideIntro() {
+        d3.select("body").on("mousedown.intro",null).on("touchstart",null);
+        d3.select("#introDialog").transition().style("opacity",0).each("end",function () { d3.select("#introDialog").style("display","none") });
+    }
+    
+    // Displays the intro gesture information.
+    function showIntro() {
+        d3.select("body").on("mousedown.intro",hideIntro).on("touchstart",hideIntro);
+        d3.select("#introDialog").style("display","block").transition().duration(700).style("opacity",1);
+    }
+
+
+</script>
+
+</html>
