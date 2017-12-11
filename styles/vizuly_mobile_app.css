@@ -156,7 +156,8 @@ div.chart-menu {
 }
 
 .mobile-item-button:hover {
-    background-color:rgba(255,255,255,.5);
+    background-color:#F2F2F2;
+    padding:1%;
 }
 
 .vizuly-pop_menu {
