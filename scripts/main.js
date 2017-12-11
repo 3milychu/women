@@ -172,7 +172,7 @@ function initialize() {
             .margin({top: chartHeight * (1 - chartHeightRatio), left:0, bottom:0, right:0})
             .height(chartHeight)
             .x(function (d) { return d.date;})
-            .y(function (d) { return Number(d[dataFields[0]]); })
+            .y(function (d) { return Number(d[dataFields[i]]); })
             .dataLabel(function (d) {
                 return (dataFields[i] == "diff") ? volumeFormat(this.y(d)) : currFormat(this.y(d));
             })
@@ -240,10 +240,9 @@ function update() {
     // updateHeader();
 
     updateScroller();
-
+    updateLabels();
     updateCharts();
 
-    updateLabels();
 
 }
 
@@ -327,7 +326,7 @@ function updateCharts() {
             .style("color",labelColors[i])
             .style("opacity",1)
             .style("cursor","pointer")
-            .html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + String(dataFields[0]) + "</span>");
+            .html("<span>" + symbols[i].key + ": </span><span style='color:#000000; opacity: 1; font-weight:300'>" + String(dataFields[i]) + "</span>");
 
         menus[i].width(menuWidth)
             .height(menuHeight)
