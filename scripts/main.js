@@ -402,7 +402,7 @@ function updateCharts() {
             .style("border-radius",(chartHeight * 0.02) + "px")
             .style("margin-top",(chartHeight * 0.045) + "px")
             .style("left",(chartWidth * 0.024) + "px")
-            .style("font-size",1.5 + "em")
+            .style("font-size",2 + "em")
             .style("color",labelColors[i])
             .style("opacity",1)
             .style("cursor","pointer")
