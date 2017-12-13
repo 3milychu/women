@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function(){
     var sideNav = document.getElementById("mySidenav");
     sideNav.innerHTML += "<a href='index.html'>- Interactive -</a>";
     sideNav.innerHTML += "<a href='about.html'>About the Data</a>";
-    sideNav.innerHTML += "<a href='analysis/gender_stats.nb.html'>Regression Model in R</a>";
-    sideNav.innerHTML += "<a href='conclusions.html' target='_blank'>Conclusions</a>";
+    sideNav.innerHTML += "<a href='analysis/gender_stats.nb.html' target='_blank'>Regression Model in R</a>";
+    sideNav.innerHTML += "<a href='conclusions.html'>Conclusions</a>";
 });
 
 function openNav (){
