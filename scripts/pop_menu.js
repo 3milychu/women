@@ -81,7 +81,7 @@ vizuly.ui.pop_menu = function (parent) {
         borderRadius = Math.min(size.width,size.height)*.05;
         itemHeight = (size.height-borderRadius)/scope.data.length;
         itemWidth = size.width;
-        fontSize = itemHeight * 0.55;
+        fontSize = itemHeight * 0.50;
 
         buttonRadius = itemHeight/11;
 

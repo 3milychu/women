@@ -80,6 +80,86 @@
 
  */
 
+// Menu
+
+// Menu
+
+document.addEventListener('DOMContentLoaded', function(){
+    // alert("Ready");
+
+    var sideNav = document.getElementById("mySidenav");
+    sideNav.innerHTML += "<a href='index.html'>- Interactive -</a>";
+    sideNav.innerHTML += "<a href='about.html'>About the Data</a>";
+    sideNav.innerHTML += "<a href='analysis/gender_stats.nb.html'>Regression Model in R</a>";
+    sideNav.innerHTML += "<a href='conclusions.html' target='_blank'>Conclusions</a>";
+});
+
+function openNav (){
+        //transition the width of our Sidenav div
+        document.getElementById("mySidenav").style.height ="100%";
+    }
+
+    function closeNav (){
+        //transition the width of our Sidenav div when closed
+        document.getElementById("mySidenav").style.height="0%";
+    };
+
+// Modal1
+
+// Get the modal
+var modal1 = document.getElementById('modal1');
+
+// Get the button that opens the modal
+var btn = document.getElementById("overlay1");
+
+// Get the <span> element that closes the modal
+var span1 = document.getElementsByClassName("close1")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal1.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function() {
+    modal1.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+}
+
+// Modal1
+
+// Get the modal
+var modal2= document.getElementById('modal2');
+
+// Get the button that opens the modal
+var btn = document.getElementById("overlay2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+    modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+
 /****  GLOBAL VARIABLES ****/
 // Collections
 var chartItems=[];   // D3 selections for each chart container
@@ -91,7 +171,7 @@ var labelColors=["#ED7D31","#ED7D31","#ED7D31","#ED7D31","#ED7D31"];
 
 // Data Fields
 var dataFields = ["w_mgr","m_mgr","diff"];
-var menuItems = [{label: "Female Managers", value: "w_mgr"},{label: "Male Managers", value: "m_mgr"},{label: "Diff", value: "diff"}];
+var menuItems = [{label: "Female Managers (%)", value: "w_mgr"},{label: "Male Managers (%)", value: "m_mgr"},{label: "Education Diff (%)", value: "diff"}];
 var skins = ["Default"];
 
 // Formatters used to make labels pretty
@@ -429,6 +509,6 @@ function onZoom () {
         chart.zoom(chart.zoom().scale(zoom.scale()).translate([zoom.translate()[0], zoom.translate()[1]]));
     });
 
-    updateLabels();
+    // updateLabels();
 };
 

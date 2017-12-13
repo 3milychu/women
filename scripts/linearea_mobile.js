@@ -130,14 +130,10 @@ vizuly.viz.linearea_mobile = function (parent) {
         stack(scope.data);
 
         // Set our yScale domain values
-        scope.yScale.domain([d3.min(scope.data, function (data) {
-                    return d3.min(data, function (d) {
-                        return Number(scope.y(d) - d.y0); })}),
-            // function(d){
-            // if((d3.min(data,function(d){scope.y(d);}) > 0)){return 0}else{return -16.2}},
-                d3.max(scope.data, function (data) {
-                    return d3.max(data, function (d) {
-                        return Number(scope.y(d) + d.y0); })})]
+        scope.yScale.domain([-16.2,100]
+                // d3.max(scope.data, function (data) {
+                //     return d3.max(data, function (d) {
+                //         return Number(scope.y(d) + d.y0); })})]
         );
 
         if (dataIsDirty==true) {

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About the Data</title>
+	<link rel="stylesheet" href="assets/styles.css"/>
+  	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  	<link href='http://fonts.googleapis.com/css?family=Raleway:200,300,500,100,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+<!-- responsive menu -->
+        <div id="mySidenav" class="sidenav">
+            
+            <span style="cursor:pointer">
+            <a class="closebtn"onmouseover="closeNav()">&times;</a></span>
+            <!-- <span style ="font-size:20px;cursor:pointer" onmouseover="openNav()" id="projects">&#9776;</span> -->
+            <a href="https://3milychu.github.io"><span style ="cursor:pointer;font-weight:300;" id="name">emily chu</span></a>
+            <span style ="cursor:pointer" id="projects" onmouseover="openNav()">&#9776;</span>
+        </div>
+
+<!-- content -->
+
+<div class = "title">
+
+	<h1>About the Data</h1>
+
+	<h2 style="padding-left:20%;">Indicators &amp; Sources</h2>
+
+	<h4 style="padding-left:20%;">Women in Managerial Positions</h4>
+	<p style="text-align:left;">
+	Data on women in managerial positions was sourced from a training hosted by the United Nations OICT - Analytics, Business Intelligence and Reporting Section on Gender Data Analytics. See column "w_mgr" in the raw dataset used <a href="https://3milychu.github.io/women/assets/gender_stats.csv">here</a>.
+
+	<h4 style="padding-left:20%;">Post-secondary education attainment by gender</h4>
+	<p style="text-align:left;">
+	Data on education attainment by gender was sourced from a training hosted by the United Nations OICT - Analytics, Business Intelligence and Reporting Section on Gender Data Analytics. See columns "female_ed", "male_ed" and "diff" in the raw dataset used <a href="https://3milychu.github.io/women/assets/gender_stats.csv">here</a>. Column "diff" was calculated by subtracting male_ed from female_ed.
+
+	<h4 style="padding-left:20%;">Labor Population</h4>
+	<p style="text-align:left;">
+	Data on total labor population was sourced from the <a href="https://data.worldbank.org/data-catalog/gender-statistics">World Bank's Gender Statistics Data Bank</a>. See column "Labor" in the raw dataset used <a href="https://3milychu.github.io/women/assets/gender_stats.csv">here</a>.
+
+	<h2 style="padding-left:20%;">Core Learnings</h2>
+
+	<h4 style="padding-left:20%;">The Impact of Education on the Female Managerial Landscape</h4>
+	<p style="text-align:left;">
+	Surprisingly, the correlation between female managers (%) and female education (%) is not statistically significant in and of itself. It is the difference between female education (%) and male education (%) that correlates with female managers (%) at a statistically significant level even when controlling for all other variables in the dataset.
+	<br>
+	<br>What does this mean? View the full conclusion <a href="conclusions.html">here</a>.
+	<br>What was the approach? Follow the regression model conducted in rStudio <a href="analysis/gender_stats.nb.html">here</a>. 
+
+	</p>
+</div>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

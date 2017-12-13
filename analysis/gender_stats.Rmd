@@ -1,0 +1,109 @@
+---
+title: "Global Gender Stats"
+output: html_notebook
+---
+*Data Source: World Bank, United Nations Gender Statistics*
+<br><br>
+
+Contents:<br>
+I. General Distribution of Dataset<br>
+a. Distribution of female managers<br>
+b. Distribution of male managers<br>
+II. Correlation Matrix<br>
+III. Regression Analysis<br>
+a. Simple regression for proportion of female managers<br>
+b. Simple regression for proportion of male managers<br>
+c. Multiple regression for all variables in the dataset<br>
+<br>
+
+##I. General Distribution of Dataset
+####a. Distribution of female managers
+```{r}
+summary(gender_stats_1)
+mean(gender_stats_1$w_mgr)
+hist(gender_stats_1$w_mgr)
+```
+
+> Proportion of female managers average 31.3% across all regions and all years in the dataset. Distribution is normal.
+
+<br>
+<br>
+
+####b. Distribution of male managers
+```{r}
+mean(gender_stats_1$m_mgr)
+hist(gender_stats_1$m_mgr)
+```
+> Proportion of male managers average 68.7% across all regions and all years in the dataset. Distribution is normal.
+
+<br>
+<br>
+```{r}
+library(dplyr)
+gender_ce <- select(gender_stats_1, -country, -region,  -cat)
+```
+##II. Correlation Matrix
+```{r}
+corrmatrix <- cor(gender_ce, use="complete.obs")
+View(corrmatrix)
+```
+
+```{r}
+install.packages('corrplot')
+library(corrplot)
+
+corrplot(corrmatrix, method="circle") # corrmatrix is the name of the correlation matrix we created above
+
+corrplot.mixed(corrmatrix, number.cex = 0.8, tl.cex = 0.6)
+#number.cex changes the size of the number fonts. tl.cex changes the size of the labels
+
+corrplot(corrmatrix, type="lower")
+```
+##III. Regression Analysis
+<br><br>
+
+####a. For proportion of women managers
+```{r}
+regression_1 <- lm(w_mgr ~ diff, data = gender_stats_1)
+regression_1.2 <- lm(w_mgr ~female_ed, data = gender_stats_1)
+
+#R default regression output:
+summary(regression_1)
+summary(regression_1.2)
+```
+<br>
+
+> Conclusion: correlation between proportion of female managers and difference in education (between males and female) is statistically significant at the 0.001 level for unadjusted coefficients. For each +1% increase in proportion of female post-secondary education, proportion of female managers increases .57 percentage points.
+<br><br>
+For each +1% increase in proportion of post-secondary education attained by women, proportion of female managers increase 8.9%.
+
+<br>
+<br>
+
+####b. For proportion of male managers
+```{r}
+regression_1m <- lm (m_mgr ~ diff, data = gender_stats_1)
+regression_1m.2 <- lm (m_mgr ~ male_ed, data = gender_stats_1)
+
+summary(regression_1m)
+summary(regression_1m.2)
+```
+> Conclusion: correlation between proportion of male managers and difference in education (between males and female) is statistically significant at the 0.001 level for unadjusted coefficients. For each +1% increase in proportion of female post-secondary education, proportion of male managers decreases .57 percentage points.
+<br><br>
+For each +1% increase in proportion of post-secondary education attained by men, proportion of female managers increase 6.3%.
+
+<br>
+<br>
+
+####c. Multiple regression between proportion of female managers and all variables in the dataset
+```{r}
+regression_2 <- lm(w_mgr ~ diff + female_ed + male_ed + labor_pop + dumregion + year + w_ind_porp + w_serv_porp + w_agr_prop, data = gender_stats_1)
+
+#R default output:
+summary(regression_2)
+```
+> Conclusion: Only difference in proportion of post-secondary degrees attained by females and males is statistically significant at the 0.001 level. This is true when controlling for all variables, reporting a +1% increase in proportion of females attaining post-secondary education over males accounting for a 7.404e-01 increase in proportion of female managers. 
+<br><br>
+Because all other variables are not statistically significant, the regression analysis reported in step a. should be the final analysis used.
+<br><Br>
+The year (between 2005-2012), whether the region is developed or not, female and male education by itself, and the proportion of women working in agriculture, industrial or service sectors is not statistically significant but have been reported here for reference. 

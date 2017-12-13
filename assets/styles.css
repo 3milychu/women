@@ -16,6 +16,21 @@ h1 {
 	text-align:center;
 }
 
+h4 {
+	font-weight:900;
+	font-size:1em;
+}
+
+a {
+	color:#c2b59b;
+	font-weight:900;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#049aa6;
+}
+
 .clear { 
 	clear: both; 
 }
@@ -30,7 +45,7 @@ h1 {
 
 .title {
 	width:100%;
-	padding-top:1%;
+	padding-top:6%;
 	padding-bottom:2%;
 	background-color:#f2f2f2;
 	height:auto;
@@ -40,7 +55,7 @@ h1 {
 .media {
 	position:relative;
 	text-align:center;
-	padding: 5% 10% 2% 20%;
+	padding: 3% 10% 2% 20%;
 	background-color:#f2f2f2;
 }
 
@@ -53,17 +68,24 @@ h1 {
 
 img {
 	width:100%;
+	margin-top:10%;
 }
 
 .overlay {
-	background-color:black;
+	background-color:#ED7D31;
 	color:white;
 	top:0;
 	left:0;
 	width:10%;
 	height:auto;
-	padding:2%;
+	padding:5%;
 	border-radius:2px;
+	cursor:pointer;
+}
+
+.overlay:hover {
+	background-color:#1a1a1a;
+	color: #c2b59b;
 }
 
 p.subtitle{
@@ -88,6 +110,131 @@ p.subtitle{
 	margin-top:0%;
 }
 
+/*navigation*/
+
+/*sidenav*/
+
+.sidenav {
+    float:right;
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    background-color: #231f20;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5%;
+    text-align:center;
+    overflow-y: hidden;
+}
+
+.sidenav a {
+    padding: 5% 2% 0% 10%;
+    color: #c2b59b;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 2em;
+    display: block;
+}
+
+.sidenav a:hover{
+     color: #049aa6;
+ }
+
+.sidenav a:active{
+    color: #c7b299;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 70%;
+    right: 5%;
+    font-size: 2em;
+    margin-left: 80%;
+}
+
+#projects{
+    position: fixed;
+    top: 0;
+    float:right;
+    left: 90%;
+    z-index:8;
+    font-size:2.5em;
+    color: #c2b59b;
+}
+
+
+
+#name{
+    position: fixed;
+    top: 1%;
+    float:left;
+    left: 5%;
+    z-index:8;
+    font-size:1em;
+}
+
+/*Modals*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The Close Button */
+.close2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*responsive*/
+
 @media only screen and (max-width: 1200px)  {
 	h1{
 		font-size:4em;
@@ -103,5 +250,15 @@ p.subtitle{
 	}
 	.title {
 		padding-bottom:10%;
+		padding-top:10%;
+	}
+	.sidenav {
+		padding-top:10%;
+	}
+	#name {
+		font-size:1.5em;
+	}
+	#projects {
+		font-size:3em;
 	}
 	}

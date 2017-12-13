@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>The Managerial Landscape</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="assets/styles.css"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
@@ -10,27 +11,76 @@
 </head>
 <body>
 
+<!-- responsive menu -->
+        <div id="mySidenav" class="sidenav">
+            
+            <span style="cursor:pointer">
+            <a class="closebtn"onmouseover="closeNav()">&times;</a></span>
+            <!-- <span style ="font-size:20px;cursor:pointer" onmouseover="openNav()" id="projects">&#9776;</span> -->
+            <a href="https://3milychu.github.io"><span style ="cursor:pointer;font-weight:300;" id="name">emily chu</span></a>
+            <span style ="cursor:pointer" id="projects" onmouseover="openNav()">&#9776;</span>
+        </div>
+
 
   <!-- Title -->
   <div class="title">
 
-    <h1>The Value of Women</h1>
-    <p>How does women’s value rise in the workplace? Explore how proportion of women in managerial positions correlate against expectations with proportion of women's post-secondary education attainment.</p>
+    <h1>The Managerial Landscape</h1>
+    <p>The managerial landscape can be shallow or steep, jagged or smooth. Explore how proportion of managerial positions map against post-secondary education attainment by gender across regions. In the following interactive, proportion of managerial positions by gender is plotted on a scale of Education Difference (%). More left indicates higher proportions of males attaining post-secondary education, and more right indicates higher proportions of females attaining post-secondary education. Flip to the Education Diff (%) view for each region to see if you were able to correctly estimate the female education attainment level. <br>What did you expect to see? What didn't you expect to see?</p>
      
       <div class="media">     
         <div class="imgContainer">
-            <span class="overlay">Y-axis</span>
+            <span class="overlay" id="overlay1">Female and Male Managers (%)</span>
           <img src="assets/mgr_img.png">
           <p class="subtitle">Female or male proportion of managerial positions <em>(%)</em></p>
         </div>
          <div class="imgContainer">
-         <span class="overlay">X-axis</span>
+         <span class="overlay" id="overlay2">Education Difference (%)</span>
           <img src="assets/ed_diff_img.png">
-          <p class="subtitle">Female - male % post-secondary education attainment <em>(years)</em></p>
+          <p class="subtitle">Female - male advanced education attainment <em>(%)</em></p>
         </div>
       </div>
       <br class="clear"/>
   </div>
+
+    <!-- Begin Modals -->
+
+      <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+
+      <!-- Modal 1 content -->
+      <div class="modal-content">
+        <span class="close1">&times;</span>
+                <h4>Definition: Female and Male Managers (%)</h4>
+            <p>
+                Female Managers = Number of females in managerial positions / the total labor population<br>
+                Male managers = Number of males in managerial positions / the total labor population
+
+            </p>
+      </div>
+
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="modal2" class="modal">
+
+      <!-- Modal 1 content -->
+      <div class="modal-content">
+        <span class="close2">&times;</span>
+                <h4>Definition: Education Difference (%)</h4>
+            <p>
+                Education Difference = (Number of total females with post-secondary education / the country's population) MINUS<br> 
+                (Number of total males with post secondary education) / the country's population
+
+            </p>
+      </div>
+
+    </div>
+
+
+
+
+<!-- End Modals -->
 
 <div class="content" style="position:relative;">
 
