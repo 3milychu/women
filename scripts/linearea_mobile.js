@@ -130,10 +130,11 @@ vizuly.viz.linearea_mobile = function (parent) {
         stack(scope.data);
 
         // Set our yScale domain values
-        scope.yScale.domain([
-                d3.min(scope.data, function (data) {
+        scope.yScale.domain([d3.min(scope.data, function (data) {
                     return d3.min(data, function (d) {
-                        return Number(scope.y(d) + d.y0); })}),
+                        return Number(scope.y(d) - d.y0); })}),
+            // function(d){
+            // if((d3.min(data,function(d){scope.y(d);}) > 0)){return 0}else{return -16.2}},
                 d3.max(scope.data, function (data) {
                     return d3.max(data, function (d) {
                         return Number(scope.y(d) + d.y0); })})]
@@ -151,8 +152,10 @@ vizuly.viz.linearea_mobile = function (parent) {
         }
 
         // Set our scale ranges
-        vizuly.core.util.setRange(scope.yScale,size.height,0);
-        vizuly.core.util.setRange(scope.xScale,0,size.width);
+        vizuly.core.util.setRange(scope.yScale,size.height,d3.min(scope.data, function (data) {
+                    return d3.min(data, function (d) {
+                        return Number(scope.y(d) + d.y0); })}));
+        vizuly.core.util.setRange(scope.xScale,-16.2,size.width);
 
         // Set our accessors so the d3 area can generate our area path data
         area.interpolate(scope.interpolate)
@@ -171,7 +174,7 @@ vizuly.viz.linearea_mobile = function (parent) {
 
         // Take an educated guess about how big to make our hit area radius based on height/width of viz.
         // This is what will pick up any mouse or touch events from the user for a given data point.
-        tipRadius = Math.min(size.width/50,size.height/50);
+        tipRadius = Math.min(size.width/20,size.height/20);
 
         // Initialize our zoom operations (this is optional)
         initializeZoom();

@@ -108,6 +108,7 @@ vizuly.theme.linearea_mobile = function (viz) {
         selection.selectAll(".vz-area")
             .style("fill", function (d, i) { return skin.area_fill(d, i); })
             .style("opacity",1)
+            .style("stroke","none")
             .style("fill-opacity",1)
 
         // Hide all data points

@@ -171,7 +171,7 @@ function initialize() {
             .duration(700)
             .margin({top: chartHeight * (1 - chartHeightRatio), left:0, bottom:0, right:0})
             .height(chartHeight)
-            .x(function (d) { return d.date;})
+            .x(function (d) { return d.diff;})
             .y(function (d) { return Number(d[dataFields[i]]); })
             .dataLabel(function (d) {
                 return (dataFields[i] == "diff") ? volumeFormat(this.y(d)) : currFormat(this.y(d));
@@ -240,7 +240,7 @@ function update() {
     // updateHeader();
 
     updateScroller();
-    updateLabels();
+    // updateLabels();
     updateCharts();
 
 
@@ -284,9 +284,9 @@ function updateScroller() {
 function updateLabels() {
     //  console.log("updateLabels");
     var indexBounds = charts[0].getIndexBounds();
-    var leftDate = symbols[0].values[indexBounds[0]].date;
-    var rightDate = symbols[0].values[indexBounds[1]].date;
-    var titleDate = symbols[0].values[charts[0].index()].date;
+    var leftDate = symbols[0].values[indexBounds[0]].diff;
+    var rightDate = symbols[0].values[indexBounds[1]].diff;
+    var titleDate = symbols[0].values[charts[0].index()].diff;
 
     d3.select("#leftScrollLabel").text(labelFormat(leftDate).toUpperCase());
     d3.select("#rightScrollLabel").text(labelFormat(rightDate).toUpperCase());
@@ -322,7 +322,7 @@ function updateCharts() {
             .style("border-radius",(chartHeight * 0.02) + "px")
             .style("margin-top",(chartHeight * 0.045) + "px")
             .style("left",(chartWidth * 0.024) + "px")
-            .style("font-size",chartHeight * 0.13 + "px")
+            .style("font-size",1.5 + "em")
             .style("color",labelColors[i])
             .style("opacity",1)
             .style("cursor","pointer")

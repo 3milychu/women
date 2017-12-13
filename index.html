@@ -21,12 +21,12 @@
         <div class="imgContainer">
             <span class="overlay">Y-axis</span>
           <img src="assets/mgr_img.png">
-          <p class="subtitle">Women’s proportion of managerial positions</p>
+          <p class="subtitle">Female or male proportion of managerial positions <em>(%)</em></p>
         </div>
          <div class="imgContainer">
          <span class="overlay">X-axis</span>
           <img src="assets/ed_diff_img.png">
-          <p class="subtitle">Female - male % post-secondary education attainment</p>
+          <p class="subtitle">Female - male % post-secondary education attainment <em>(years)</em></p>
         </div>
       </div>
       <br class="clear"/>
@@ -129,7 +129,7 @@
 
             // Filter data to get only years above 2012.   You can adjust this to see how the chart
             // looks with more or less data.
-            var data = csv.filter(function (d) { return d3.time.format("%m/%d/%Y").parse(d.date).getFullYear() > 09 });
+            var data = csv.filter(function (d) { return d.diff > -20 });
 
             // Nest stock values by symbol.
             symbols = d3.nest()
@@ -142,7 +142,7 @@
             // Also compute the maximum price per symbol, needed for the y-domain.
             symbols.forEach(function (s) {
                 s.values.forEach(function (d) {
-                    d.date = d3.time.format("%m/%d/%Y").parse(d.date);
+                    d.diff = +d.diff;
                 });
 
                 menuItems.forEach(function(field) {
