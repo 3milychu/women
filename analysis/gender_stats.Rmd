@@ -107,3 +107,13 @@ summary(regression_2)
 Because all other variables are not statistically significant, the regression analysis reported in step a. should be the final analysis used.
 <br><Br>
 The year (between 2005-2012), whether the region is developed or not, female and male education by itself, and the proportion of women working in agriculture, industrial or service sectors is not statistically significant but have been reported here for reference. 
+
+
+```{r}
+regression_3 <- lm(female_ed ~ dumregion, data = gender_stats_1)
+summary(regression_3)
+
+regression_4 <- lm(w_mgr ~ dumregion, data = gender_stats_1)
+summary(regression_4)
+```
+
