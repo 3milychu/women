@@ -46,6 +46,10 @@ path.domain {
 
 .vz-data-point {
     shape-rendering: auto;
+    stroke:black;
+    stroke:5px;
+    opacity:1;
+    fill:black;
 }
 
 .vz-bottomAxis {
@@ -123,6 +127,7 @@ path.domain {
 
 .vz-viz circle {
     shape-rendering:auto;
+    stroke:black;
 }
 
 

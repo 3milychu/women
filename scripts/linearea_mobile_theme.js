@@ -112,7 +112,10 @@ vizuly.theme.linearea_mobile = function (viz) {
             .style("fill-opacity",1)
 
         // Hide all data points
-        selection.selectAll(".vz-data-point").style("opacity", 0);
+        selection.selectAll(".vz-data-point")
+            .style("fill", "black")
+            .style("stroke","black")
+            .style("opacity", 1);
 
         // Update the bottom axis (dynamically adjust font size)
         selection.selectAll(".vz-bottom-axis")
