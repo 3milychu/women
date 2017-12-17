@@ -28,18 +28,18 @@
   <div class="title">
 
     <h1>The Managerial Landscape</h1>
-    <p>The managerial landscape can be shallow or steep, jagged or smooth. Explore how proportion of managerial positions map against post-secondary education attainment differences by gender across regions. Flip to the Education Diff (%) view for each region to see if you were able to correctly estimate the education difference level.</p>
+    <p>The managerial landscape can be shallow or steep, jagged or smooth. Explore how male and female managerial representation map against post-secondary education attainment differences in gender across regions.</p>
      
       <div class="media">     
         <div class="imgContainer">
             <span class="overlay" id="overlay1">Female and Male Managers (%)</span>
-          <img src="assets/mgr_img.png">
+          <img style="margin-top:10%;" src="assets/mgr_img.png">
           <p class="subtitle">Female or male proportion of managerial positions <em>(%)</em></p>
         </div>
          <div class="imgContainer">
-         <span class="overlay" id="overlay2">Education Difference (%)</span>
-          <img src="assets/ed_diff_img.png">
-          <p class="subtitle">Female - male advanced education attainment <em>(%)</em></p>
+         <span class="overlay" id="overlay2">Education Difference (pp)</span>
+          <img style="margin-top:10%;" src="assets/ed_diff_img.png">
+          <p class="subtitle">Female - male proportion advanced education attainment <em>(pp)</em></p>
         </div>
       </div>
       <br class="clear"/>
@@ -55,8 +55,8 @@
         <span class="close1">&times;</span>
                 <h4>Definition: Female and Male Managers (%)</h4>
             <p>
-                Female Managers = Number of females in managerial positions / the total labor population<br>
-                Male managers = Number of males in managerial positions / the total labor population
+                Female Managers = Number of females managers / the total labor population<br>
+                Male managers = Number of male managers / the total labor population
 
             </p>
       </div>
@@ -69,12 +69,12 @@
       <!-- Modal 1 content -->
       <div class="modal-content">
         <span class="close2">&times;</span>
-                <h4>Definition: Education Difference (%)</h4>
+                <h4>Definition: Education Difference</h4>
             <p>
                 Education Difference = (Number of total females with post-secondary education / the country's population) MINUS<br> 
                 (Number of total males with post secondary education) / the country's population
                 <br><br>
-                In the following interactive, proportion of managerial positions by gender is plotted on a scale of Education Difference (%). More left indicates higher proportions of males attaining post-secondary education, and more right indicates higher proportions of females attaining post-secondary education. 
+               Proportion of female or male managerial positions is plotted by Education Difference (percentage point or pp). More left indicates higher proportions of males attaining post-secondary education, and more right indicates higher proportions of females attaining post-secondary education in a population. 
 
             </p>
       </div>
@@ -92,7 +92,7 @@
     <div id="devicePhone" style="position:absolute; display: block; opacity: 1; overflow: hidden; pointer-events: auto; z-index: 0;">
     </div>
 
-    <div id="header" style="position:absolute; z-index:2; opacity:1; background-color: #3B4E57">
+    <div id="header" style="position:absolute; z-index:2; opacity:1; background-color: #666666">
 
          <!-- titleBar -->
         <div id="titleBar" class="noselect" style="position:relative; height:40%;">
@@ -115,14 +115,15 @@
         <!-- titleBar [end] -->
 
         <!-- date -->
-        <div id="date" class="noselect" style="position:absolute; top:42%; width:100%; text-align:center; font-weight:200; font-size:14px;"></div>
+        <div id = "edlabel" style="text-align:center;color:white;font-size:0.8em;">Education Difference</div>
+        <img id = "arrow" src="assets/arrow.png">
+        <div id="date" class="noselect" style="color:white;position:absolute; top:30%; width:100%; text-align:center;"></div>
 
         <!-- scrollContainer -->
         <div id="scrollContainer" style="position:relative; left:0%; width:100%; height:10%; top:38%;">
 
             <!-- scrolldiv -->
-            <div id="scrollDiv" style="position:absolute; top:40%; z-index:3; height:100%; opacity:0.8;"></div>
-
+            <div id="scrollDiv" style="position:absolute; top:40%; z-index:3; height:100%; opacity:0;"></div>
         <!-- scrollContainer [end] -->
 
     </div>

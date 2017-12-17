@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Editorial</title>
+	 <meta property="og:image" content="https://raw.githubusercontent.com/3milychu/women/master/assets/cover.gif">
+  	<link rel="image_src" href="https://raw.githubusercontent.com/3milychu/women/master/assets/cover.gif">
+	<link rel="stylesheet" href="assets/styles.css"/>
+  	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  	<link href='http://fonts.googleapis.com/css?family=Raleway:200,300,500,100,700' rel='stylesheet' type='text/css'>
+</head>
+<body style="background-color:#f2f2f2;">
+
+
+<!-- responsive menu -->
+        <div id="mySidenav" class="sidenav">
+            
+            <span style="cursor:pointer">
+            <a class="closebtn"onmouseover="closeNav()">&times;</a></span>
+            <!-- <span style ="font-size:20px;cursor:pointer" onmouseover="openNav()" id="projects">&#9776;</span> -->
+            <a href="https://3milychu.github.io"><span style ="cursor:pointer;font-weight:300;" id="name">emily chu</span></a>
+            <span style ="cursor:pointer" id="projects" onmouseover="openNav()">&#9776;</span>
+        </div>
+
+<!-- content -->
+
+<div class = "title">
+<h1>Editorial</h1>
+	<p>If you are a reader, tap to view each chapter in detail <br>
+	If you are a statistician, find rStudio calculations <a href="analysis/gender_stats.nb.html">here</a>
+	</p>
+</div>
+
+<!-- Summary Statistics -->
+<div class="chapter" onmouseover="openSumStats()"><h2>I. Summary Statistics</h2></div>
+<div class="chapter-content" id="sumstats" onmouseout="closeSumStats()">
+				<div class="imgContainer2"><img src="assets/fhistogram.png"></div>
+				<div class="imgContainer2"><img src="assets/mhistogram.png"></div>
+</div>
+
+	<div class="clear">
+	</div>
+
+	<div class="break">
+			<p>In 79 global sample populations, female manager representation averages <em>31.3%</em><br>
+			Male manager representation averages <em>68.7%</em></p>
+	</div>
+
+<!-- Correlation Matrix -->
+<div class="chapter" onmouseover="openCorrmatrix()"><h2>II. Correlation Matrix</h2></div>
+<div class="chapter-content" id="corrmatrix">
+				<div class="imgContainer2"><img src="assets/corrmatrix.png"></div>
+				<div class="popout">
+					<p>
+					It is the proportion of women that have attained post-secondary education that correlates with female manager representation.The dependent variable <em>Female Manager representation correlates strongest with the education difference</em> between females and males.</p>
+				</div>
+</div>
+
+	<div class="clear">
+	</div>
+
+	<div class="break">
+			<p>While there is a weak correlation of <em>0.13</em> between female manager representation and female higher education attainment itself, <br>there is a strong correlation of <em>0.4</em> between female manager representation and the education difference between males and females</p>
+	</div>
+
+<!-- Regression Model -->
+
+<div class="chapter" onmouseover="openRegression()"><h2>III. Regression Model</h2></div>
+<div class="chapter-content" id="regression">
+				<div class="imgContainer4"><img src="assets/regressionkey.png"></div>
+
+				<div class="imgContainer2" id="shrink"><img src="assets/regression1.png"></div>
+				<div class="imgContainer2" id="shrink"><img src="assets/regression2.png"></div>
+								<div class="popout2"><p>In this case, <em>the bi-variate analysis is used</em> since the multi-variate analysis finds no other significant independent variable</p></div>
+</div>
+
+	<div class="clear">
+	</div>
+
+	<div class="break">
+			<p>The <em>only statistically significant relationship</em><br> is between Female Manager representation and Education difference.<br><br>Surprisingly, the relationship between Female representation and female education itself<em><br>is not statistically significant.</em><br><br>
+			For each <em>1%</em> increase in proportion of females attaining post-secondary education,<br> female manager representation increases <em>.57</em> percentage points.</p>
+	</div>
+
+<!-- Final Thoughts -->
+
+<div class="chapter"><h2>IV. Final Thoughts</h2></div>
+	<div class="break">
+			<p> It is not how educated <em>some females</em> are that changes the landscape.<br><br>
+			It is perception of <em>most females</em> in a population that changes the landscape.</p>
+	</div>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

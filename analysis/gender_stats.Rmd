@@ -57,6 +57,7 @@ corrplot(corrmatrix, method="circle") # corrmatrix is the name of the correlatio
 corrplot.mixed(corrmatrix, number.cex = 0.8, tl.cex = 0.6)
 #number.cex changes the size of the number fonts. tl.cex changes the size of the labels
 
+pdf("corrplotpdf")
 corrplot(corrmatrix, type="lower")
 ```
 ##III. Regression Analysis

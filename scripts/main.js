@@ -89,20 +89,54 @@ document.addEventListener('DOMContentLoaded', function(){
 
     var sideNav = document.getElementById("mySidenav");
     sideNav.innerHTML += "<a href='index.html'>- Interactive -</a>";
-    sideNav.innerHTML += "<a href='about.html'>About the Data</a>";
-    sideNav.innerHTML += "<a href='analysis/gender_stats.nb.html' target='_blank'>Regression Model in R</a>";
+    sideNav.innerHTML += "<a href='editorial.html'>Editorial</a>";
     sideNav.innerHTML += "<a href='conclusions.html'>Conclusions</a>";
+    sideNav.innerHTML += "<a href='analysis/gender_stats.nb.html' target='_blank'>Regression Model in R</a>";
+    sideNav.innerHTML += "<a href='about.html'>About the Data</a>";
+    
 });
+
+// open and close nav
 
 function openNav (){
         //transition the width of our Sidenav div
         document.getElementById("mySidenav").style.height ="100%";
-    }
+    };
 
-    function closeNav (){
+function closeNav (){
         //transition the width of our Sidenav div when closed
         document.getElementById("mySidenav").style.height="0%";
     };
+
+
+// open and close chapters
+
+function openSumStats() {
+    document.getElementById("sumstats").style.height="100%";
+};
+
+function closeSumStats() {
+    document.getElementById("sumstats").style.height="0";
+    document.getElementById("sumstats").style.overflow="hidden";
+};
+
+function openCorrmatrix() {
+    document.getElementById("corrmatrix").style.height="100%";
+};
+
+function closeCorrmatrix() {
+    document.getElementById("corrmatrix").style.height="0";
+    document.getElementById("corrmatrix").style.overflow="hidden";
+};
+
+function openRegression() {
+    document.getElementById("regression").style.height="100%";
+};
+
+function closeRegression() {
+    document.getElementById("regression").style.height="0";
+    document.getElementById("regression").style.overflow="hidden";
+};
 
 // Modal1
 
@@ -316,11 +350,9 @@ function initialize() {
 function update() {
 
     zoom.size([listWidth,listHeight]);
-
-    // updateHeader();
-
-    updateScroller();
-    // updateLabels();
+    updateHeader();
+    // updateScroller();
+    updateLabels();
     updateCharts();
 
 
@@ -368,9 +400,9 @@ function updateLabels() {
     var rightDate = symbols[0].values[indexBounds[1]].diff;
     var titleDate = symbols[0].values[charts[0].index()].diff;
 
-    d3.select("#leftScrollLabel").text(labelFormat(leftDate).toUpperCase());
-    d3.select("#rightScrollLabel").text(labelFormat(rightDate).toUpperCase());
-    d3.select("#date").text(titleDateFormat(titleDate).toUpperCase());
+    d3.select("#leftScrollLabel").text(leftDate);
+    d3.select("#rightScrollLabel").text(rightDate);
+    d3.select("#date").text(titleDate + " pts");
 }
 
 // Update all charts

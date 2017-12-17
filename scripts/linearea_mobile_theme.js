@@ -117,6 +117,20 @@ vizuly.theme.linearea_mobile = function (viz) {
             .style("stroke","black")
             .style("opacity", 1);
 
+        // Show the vz-tips
+        selection.selectAll(".vz-tips")
+            .attr("r",viz.width() * .05)
+            .style("fill", "black")
+            .style("stroke","black")
+            .style("opacity", 1);
+
+        // Show the vz-tips
+        selection.selectAll(".vz-hit-circle")
+            .attr("r",viz.width() * .05)
+            .style("fill", "black")
+            .style("stroke","black")
+            .style("opacity", 1);
+
         // Update the bottom axis (dynamically adjust font size)
         selection.selectAll(".vz-bottom-axis")
             .style("display","none");
@@ -136,16 +150,15 @@ vizuly.theme.linearea_mobile = function (viz) {
             .style("text-anchor","start");
 
         selection.selectAll(".vz-pointer-label text")
-            .style("font-size",1.5 + "em")
+            .style("font-size",1.8 + "em")
             .style("text-anchor","middle");
 
-
         selection.selectAll(".tip-point-outer")
-            .attr("r",viz.width() * .011)
+            .attr("r",viz.width() * .013)
             .style("fill","ED7D31");
 
         selection.selectAll(".tip-point-center")
-            .attr("r",viz.width() * .008)
+            .attr("r",viz.width() * .01)
             .style("fill","white")
 
         onIndexChange();

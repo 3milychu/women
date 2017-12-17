@@ -67,9 +67,20 @@ a:hover {
 	padding:1%;
 }
 
+.imgContainer2 {
+	width:50%;
+	float:left;
+}
+.imgContainer3 {
+	width:70%;
+}
+.imgContainer4{
+	width:20%;
+	padding:2% 0% 0% 1%;
+}
+
 img {
 	width:100%;
-	margin-top:10%;
 }
 
 .overlay {
@@ -85,14 +96,18 @@ img {
 }
 
 .overlay:hover {
-	background-color:#1a1a1a;
-	color: #c2b59b;
+	background-color:white;
+	color: #ED7D31;
 }
 
 p.subtitle{
-	font-size:1em;
+	font-size:0.7em;
 	font-weight:900;
 	text-align:center;
+}
+
+p.subtitle:hover {
+	font-size:0.9em;
 }
 
 #chartDiv{
@@ -111,6 +126,82 @@ p.subtitle{
 	margin-top:0%;
 }
 
+#edlabel {
+	margin-top:-1.5%;
+}
+
+#arrow {
+	width:2%;
+	z-index:100;
+	position:relative;
+	margin: 0% 0% 0% 43%;
+	float:left;
+}
+
+/*content*/
+
+.chapter-content {
+	height:0;
+	overflow:hidden;
+}
+
+.break {
+	background-color:#666666;
+	padding:5%;
+}
+.break p {
+	font-weight:100;
+	color:white;
+	text-align:center;
+}
+em {
+	font-style:normal;
+	font-weight:900;
+}
+
+em:hover{
+	color:#ED7D30;
+	cursor:crosshair;
+	font-size:larger;
+}
+
+.popout {
+	margin:5% 5% 5% 5%;
+	width:30%;
+	padding:5%;
+	float:right;
+	background-color:white;
+	border-radius:10px;
+}
+
+.popout p {
+	font-size:1.5em;
+	font-weight:100;
+}
+
+.popout2 {
+	width:30%;
+	padding:2%;
+	float:left;
+	margin:-20% 0% 0% 5%;
+	background-color:white;
+	border-radius:10px;
+}
+
+.popout2 p {
+	font-size:1.5em;
+	font-weight:100;
+}
+.chapter {
+	background-color:#ED7D30;
+	padding:1% 0% 1% 0%;
+}
+
+.chapter h2 {
+	color:white;
+	font-weight:100;
+	padding:0% 5% 0% 5%;
+}
 /*navigation*/
 
 /*sidenav*/
@@ -123,7 +214,7 @@ p.subtitle{
     z-index: 6;
     top: 0;
     left: 0;
-    background-color: #231f20;
+    background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 5%;
@@ -132,8 +223,8 @@ p.subtitle{
 }
 
 .sidenav a {
-    padding: 5% 2% 0% 10%;
-    color: #c2b59b;
+    padding: 2% 2% 0% 10%;
+    color: #ED7D31;
     font-family: 'Lato', sans-serif;
     font-weight: 900;
     text-decoration: none;
@@ -142,11 +233,11 @@ p.subtitle{
 }
 
 .sidenav a:hover{
-     color: #049aa6;
+     color: #666666;
  }
 
 .sidenav a:active{
-    color: #c7b299;
+    color: #ED7D31;
 }
 
 
@@ -165,7 +256,7 @@ p.subtitle{
     left: 90%;
     z-index:8;
     font-size:2.5em;
-    color: #c2b59b;
+    color: #ED7D31;
 }
 
 
@@ -177,6 +268,10 @@ p.subtitle{
     left: 5%;
     z-index:8;
     font-size:1em;
+}
+
+#date {
+	font-weight:200;
 }
 
 /*Modals*/
@@ -265,4 +360,49 @@ p.subtitle{
 	.modal-content{
 		margin: 30% auto; /* 15% from the top and centered */
 	}
+	p.subtitle {
+		size:1em;
 	}
+	p.subtitle:hover {
+		size:1em;
+	}
+	#edlabel {
+		margin-top:-2%;
+	}
+	#arrow{
+		width:2.5%;
+		margin: 0% 0% 0% 40%;
+	}
+	.imgContainer2{
+		width:100%;
+	}
+	.popout{
+		float:left;
+		width:80%;
+	}
+	.popout p{
+		text-align:center;
+	}
+	.popout2 {
+		float:left:
+		width:100%;
+		padding:0% 1% 0% 1%;
+	}
+	.popout2 p{
+		font-size:1em;
+	}
+	}
+	#shrink {
+		width:50%;
+	}
+	}
+
+@media only screen and (max-width: 800px)  {
+	#edlabel {
+		margin-top:-3%;
+	}
+	#arrow{
+		width:3%;
+		margin: .5% 0% 0% 38%;
+	}
+}
