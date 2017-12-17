@@ -146,12 +146,12 @@ p.subtitle:hover {
 }
 
 .break {
-	background-color:#666666;
+	background-color:white;
 	padding:5%;
 }
 .break p {
 	font-weight:100;
-	color:white;
+	color:#231F20;
 	text-align:center;
 }
 em {
@@ -371,7 +371,7 @@ em:hover{
 	}
 	#arrow{
 		width:2.5%;
-		margin: 0% 0% 0% 40%;
+		margin: 0% 0% 0% 35%;
 	}
 	.imgContainer2{
 		width:100%;
@@ -395,6 +395,18 @@ em:hover{
 	#shrink {
 		width:50%;
 	}
+	.break p{
+		font-weight:300;
+	}
+	.chapter h2 {
+		font-weight:300;
+	}
+	.popout p {
+		font-weight:300;
+	}
+	.popout2 p{
+		font-weight:300;
+	}
 	}
 
 @media only screen and (max-width: 800px)  {
@@ -403,6 +415,6 @@ em:hover{
 	}
 	#arrow{
 		width:3%;
-		margin: .5% 0% 0% 38%;
+		margin: .5% 0% 0% 30%;
 	}
 }
