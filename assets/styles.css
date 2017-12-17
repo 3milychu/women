@@ -68,8 +68,9 @@ a:hover {
 }
 
 .imgContainer2 {
-	width:50%;
+	width:40%;
 	float:left;
+	padding:5%;
 }
 .imgContainer3 {
 	width:70%;
@@ -77,6 +78,11 @@ a:hover {
 .imgContainer4{
 	width:20%;
 	padding:2% 0% 0% 1%;
+}
+.imgContainer5{
+		width:50%;
+	float:left;
+
 }
 
 img {
@@ -146,12 +152,12 @@ p.subtitle:hover {
 }
 
 .break {
-	background-color:white;
+	background-color:#ED7D30;
 	padding:5%;
 }
 .break p {
 	font-weight:100;
-	color:#231F20;
+	color:white;
 	text-align:center;
 }
 em {
@@ -168,7 +174,7 @@ em:hover{
 .popout {
 	margin:5% 5% 5% 5%;
 	width:30%;
-	padding:5%;
+	padding:2% 5% 2% 5%;
 	float:right;
 	background-color:white;
 	border-radius:10px;
@@ -193,12 +199,12 @@ em:hover{
 	font-weight:100;
 }
 .chapter {
-	background-color:#ED7D30;
+	background-color:white;
 	padding:1% 0% 1% 0%;
 }
 
 .chapter h2 {
-	color:white;
+	color:#ED7D30;
 	font-weight:100;
 	padding:0% 5% 0% 5%;
 }
@@ -375,7 +381,7 @@ em:hover{
 		margin: 2% 0% 0% 35%;
 	}
 	.imgContainer2{
-		width:100%;
+		width:80%;
 	}
 	.popout{
 		float:left;
