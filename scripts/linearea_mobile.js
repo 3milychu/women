@@ -261,24 +261,8 @@ vizuly.viz.linearea_mobile = function (parent) {
         scope.data.forEach(function (series,j) {
 
             // // Here are our svg.g elements
-            // var points = pointHitArea.selectAll("vz-tip").data(series).enter()
-            //     .append("g").attr("class", "vz-tip");
-
-            // Here are our svg.g elements
             var points = pointHitArea.selectAll("vz-tip").data(series).enter()
-                .append("g").attr("class", "vz-tip")
-                .attr("transform", function (d,i) { return "translate(" + scope.xScale(scope.x(d)) + "," + scope.yScale(scope.y(d) + d.y0)  + ")" })
-                .on("mouseover", function (d,i) { scope.dispatch.mouseover.apply(this,[d,i,j]); })
-                .on("touchstart", function (d,i) { scope.dispatch.mouseover.apply(this,[d,i,j]); })
-                .on("mouseout", function (d,i) { scope.dispatch.mouseout.apply(this,[d,i,j]); })
-                .on("mousedown", function (d,i) { scope.dispatch.mousedown.apply(this,[d,i,j]);});
-
-            // Here our our points for each one
-            points.each(function () {
-                var tip =  d3.select(this);
-                tip.append("circle")
-                    .transition();
-            });
+                .append("g").attr("class", "vz-tip");
 
         });
 
