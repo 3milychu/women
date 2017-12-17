@@ -367,11 +367,12 @@ em:hover{
 		size:1em;
 	}
 	#edlabel {
-		margin-top:-2%;
+		margin-top:-3%;
+		font-size:1em;
 	}
 	#arrow{
 		width:2.5%;
-		margin: 0% 0% 0% 35%;
+		margin: 1.5% 0% 0% 35%;
 	}
 	.imgContainer2{
 		width:100%;
