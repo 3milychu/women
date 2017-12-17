@@ -411,10 +411,11 @@ em:hover{
 
 @media only screen and (max-width: 800px)  {
 	#edlabel {
-		margin-top:-3%;
+		margin-top:-1%;
+		font-size:1em;
 	}
 	#arrow{
 		width:3%;
-		margin: .5% 0% 0% 30%;
+		margin: 1% 0% 0% 30%;
 	}
 }
