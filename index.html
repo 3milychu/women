@@ -53,8 +53,8 @@
       <!-- Modal 1 content -->
       <div class="modal-content">
         <span class="close1">&times;</span>
-                <h4>Definition: Female and Male Managers (%)</h4>
-            <p>
+                <h4 style="color:black;">Definition: Female and Male Managers (%)</h4>
+            <p style="color:black;">
                 Female Managers = Number of females managers / the total labor population<br>
                 Male managers = Number of male managers / the total labor population
 
@@ -69,8 +69,8 @@
       <!-- Modal 1 content -->
       <div class="modal-content">
         <span class="close2">&times;</span>
-                <h4>Definition: Education Difference</h4>
-            <p>
+                <h4 style="color:black;">Definition: Education Difference</h4>
+            <p style="color:black;">
                 Education Difference = (Number of total females with post-secondary education / the country's population) MINUS<br> 
                 (Number of total males with post secondary education) / the country's population
                 <br><br>
@@ -92,7 +92,7 @@
     <div id="devicePhone" style="position:absolute; display: block; opacity: 1; overflow: hidden; pointer-events: auto; z-index: 0;">
     </div>
 
-    <div id="header" style="position:absolute; z-index:2; opacity:1; background-color: #666666">
+    <div id="header" style="position:absolute; z-index:2; opacity:1; background-color: #666666;">
 
          <!-- titleBar -->
         <div id="titleBar" class="noselect" style="position:relative; height:40%;">
@@ -198,6 +198,7 @@
             symbols.forEach(function (s) {
                 s.values.forEach(function (d) {
                     d.diff = +d.diff;
+                    d.country = +d.country;
 
                 });
 
