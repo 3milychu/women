@@ -373,8 +373,8 @@ summary:focus {
 		font-size:4em;
 	}
 	.title p{
-		font-size:1.2em;
-		font-weight:300;
+		font-size:1.5em;
+		font-weight:400;
 	}
 	.imgContainer{
 		width:45%;
@@ -436,7 +436,7 @@ summary:focus {
 		width:50%;
 	}
 	.break p{
-		font-weight:300;
+		font-weight:400;
 		font-size:1.5em;
 	}
 	.chapter h2 {
@@ -459,4 +459,6 @@ summary:focus {
 		width:3%;
 		margin: 1% 0% 0% 30%;
 	}
+		.sidenav a {
+    padding: 5% 2% 0% 10%;
 }
