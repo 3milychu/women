@@ -61,6 +61,36 @@ a:hover {
 	background-blend-mode: multiply;
 }
 
+.title2 p {
+	font-size:1em;
+	font-weight:300;
+	margin:auto;
+	width:60%;
+	text-align:center;
+	color:black;
+}
+
+.title2 {
+	width:100%;
+	padding-top:6%;
+	padding-bottom:2%;
+	background-color:#f2f2f2;
+	height:auto;
+	position:relative;
+}
+.title2 h1 {
+	color:black;
+}
+
+.title2 h2 {
+	color:#666666;
+}
+
+.title2 h4 {
+	color:#666666;
+	padding:1%;
+}
+
 .media {
 	position:relative;
 	text-align:center;
