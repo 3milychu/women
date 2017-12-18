@@ -29,8 +29,13 @@ a {
 }
 
 a:hover {
-	color:#049aa6;
+	color:#ED7D31;
 }
+
+#button-text{
+	font-family:'Lato', sans-serif;
+}
+
 
 .clear { 
 	clear: both; 
@@ -60,6 +65,10 @@ a:hover {
 	position:relative;
 	text-align:center;
 	padding: 3% 10% 2% 20%;
+}
+
+#media2 {
+		padding: 5% 0% 2% 0%;
 }
 
 .imgContainer {
@@ -365,6 +374,7 @@ summary:focus {
 	}
 	.title p{
 		font-size:1.2em;
+		font-weight:300;
 	}
 	.imgContainer{
 		width:45%;
@@ -427,6 +437,7 @@ summary:focus {
 	}
 	.break p{
 		font-weight:300;
+		font-size:1.5em;
 	}
 	.chapter h2 {
 		font-weight:300;

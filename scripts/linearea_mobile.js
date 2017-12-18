@@ -170,7 +170,7 @@ vizuly.viz.linearea_mobile = function (parent) {
 
         // Take an educated guess about how big to make our hit area radius based on height/width of viz.
         // This is what will pick up any mouse or touch events from the user for a given data point.
-        tipRadius = Math.min(size.width/100,size.height/100);
+        tipRadius = Math.min(size.width/20,size.height/20);
 
         // Initialize our zoom operations (this is optional)
         initializeZoom();
